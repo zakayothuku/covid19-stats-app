@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/worldStatsFragment">
+
+    <fragment
+        android:id="@+id/worldStatsFragment"
+        android:name="com.schatzdesigns.covid19stats.ui.stats.worldwide.WorldwideStatsFragment">
+
+        <action
+            android:id="@+id/action_worldStatsFragment_to_countriesFragment"
+            app:destination="@id/countriesFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="com.schatzdesigns.covid19stats.ui.stats.country.search.CountriesFragment">
+
+        <action
+            android:id="@+id/action_countriesFragment_to_countryStatsFragment"
+            app:destination="@id/countryStatsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/countryStatsFragment"
+        android:name="com.schatzdesigns.covid19stats.ui.stats.country.CountryStatsFragment">
+
+        <argument
+            android:name="country"
+            app:argType="com.schatzdesigns.covid19stats.ui.stats.country.model.Country" />
+
+    </fragment>
+
+</navigation>
